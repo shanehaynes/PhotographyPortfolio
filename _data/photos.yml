@@ -1,0 +1,184 @@
+recent:
+  - url: "/assets/images/CooperFisherChimney.jpeg"
+    alt: "Cooper Stewart on Fisher's Chimney, Mt Shuksan with Mt. Baker in the background."
+    date: "2024-07-17"
+
+  - url: "/assets/images/JordanCowboyRidge.jpeg"
+    alt: "Jordan Evans climbing a crack on Cowboy Ridge, just outside Zion National Park."
+    date: "2023-05-06"
+
+  - url: "/assets/images/GannetRidges.jpeg"
+    alt: "Gannet and surrounding ridgelines in the Wind River Range, Wyoming."
+    date: "2023-08-13"
+
+  - url: "/assets/images/TitcombFlower.jpeg"
+    alt: "A couple of flowers in the Wind River Range, Wyoming."
+    date: "2023-08-12"
+
+  - url: "/assets/images/JordanShotgunChutes.jpeg"
+    alt: "Jordan Evans shredding spring snow on Shotgun Chutes. Wasatch, Utah."
+    date: "2024-05-27"
+
+  - url: "/assets/images/JordanAntelopeIsland.jpg"
+    alt: "Jordan Evans on Antelope Island, Utah"
+    date: "2020-01-19"
+
+  - url: "/assets/images/FuzzSawtoothPortrait.jpeg"
+    alt: "David Haynes looking up at the climb. Sawtooth Range, Idaho."
+    date: "2022-06-13"
+
+  - url: "/assets/images/JordanMeadowPortrait.jpeg"
+    alt: "Jordan Evans enjoying golden hour. Near Mt. Timpanogos, Wasatch."
+    date: "2022-10-16"
+
+  - url: "/assets/images/SubwaySedona.jpeg"
+    alt: "The Subway in early morning light. Near Sedona, Arizona"
+    date: "2023-03-09"
+
+  - url: "/assets/images/CooperShuksan.jpeg"
+    alt: "Cooper Stewart taking in some calories. Mt. Shuksan, Washington"
+    date: "2024-07-18"
+
+  - url: "/assets/images/JordanHeavenHalfpipe.jpeg"
+    alt: "Jordan Evans shredding in whiteout conditions on Heaven's Halfpipe. Wasatch, Utah."
+    date: "2024-02-10"
+
+  - url: "/assets/images/LeavenworthFog.jpeg"
+    alt: "Mountains shrouded in fog. Near Leavenworth, Washington."
+    date: "2023-10-11"
+
+  - url: "/assets/images/PfeifferhornFlowers.jpeg"
+    alt: "Alpine flowers clinging to the side of a cliff on Pfeifferhorn. Wasatch, Utah."
+    date: "2023-07-16"
+
+  - url: "/assets/images/CooperTwinChutesStansburry.jpeg"
+    alt: "Cooper Stewart booting up the western coulior of Twin Chutes. Stansbury Mountains, Utah."
+    date: "2024-05-24"
+
+  - url: "/assets/images/JordanIndianBasin.jpeg"
+    alt: "Jordan Evans happy to have sumitted Fremont and back before lunch. Wind River Range, Wyoming."
+    date: "2024-07-05"
+
+  - url: "/assets/images/FuzzSundialFalls.jpeg"
+    alt: "David Haynes jubilant after topping out his first ice climb. Wasatch, Utah"
+    date: "2023-11-26"
+
+  - url: "/assets/images/CooperHiddenHavenLastPitch2023.jpeg"
+    alt: "Cooper Stewart climbing the aesthetic last pitch of Hidden Haven. Southern Utah."
+    date: "2023-02-19"
+
+  - url: "/assets/images/AspenReflection.jpeg"
+    alt: "Aspens with golden leaves reflected in the still water of Lake Blanche. Wasatch, Utah"
+    date: "2024-10-13"
+
+  - url: "/assets/images/TimpanogosGoat.jpeg"
+    alt: "A leaping mountain goat on the Timpanogos Massif. Wasatch, Utah"
+    date: "2022-06-25"
+
+  - url: "/assets/images/TimpMeadowJordan.jpeg"
+    alt: "Jordan Evans walks through an aspen forest during golden hour. Near Mt. Timpanogos, Wasatch, Utah."
+    date: "2022-10-16"
+
+  - url: "/assets/images/FuzzKingsCaveSedona.jpeg"
+    alt: "David Haynes checking out the Anasazi cliff dwellings while rappelling. Near Sedona, Arizona."
+    date: "2024-03-05"
+
+  - url: "/assets/images/IndianBasin.jpeg"
+    alt: "A thawing Indian Basin with Mt. Fremont in the background. Wind River Range, Wyoming."
+    date: "2024-07-05"
+
+  - url: "/assets/images/LakeBlancheWinter.jpeg"
+    alt: "Lake Blanche after a recent winter storm. Wasatch, Utah."
+    date: "2023-11-26"
+
+landscape:
+  - url: "/assets/images/IndianBasin.jpeg"
+    alt: "Indian Basin with Mt. Fremont in the background. Wind River Range, Wyoming."
+    date: "2024-07-05"
+
+  - url: "/assets/images/TimpMeadowJordan.jpeg"
+    alt: "Jordan Evans walks through an aspen forest during golden hour. Near Mt. Timpanogos, Wasatch, Utah."
+    date: "2022-10-16"
+
+  - url: "/assets/images/AspenReflection.jpeg"
+    alt: "Aspens with golden leaves reflected in the still water of Lake Blanche. Wasatch, Utah"
+    date: "2024-10-13"
+
+  - url: "/assets/images/CooperShuksan.jpeg"
+    alt: "Cooper Stewart taking in some calories. Mt. Shuksan, Washington"
+    date: "2024-07-18"
+
+  - url: "/assets/images/LeavenworthFog.jpeg"
+    alt: "Mountains shrowded in fog. Near Leavenworth, Washington."
+    date: "2023-10-11"
+
+  - url: "/assets/images/SubwaySedona.jpeg"
+    alt: "The Subway in early morning light. Near Sedona, Arizona"
+    date: "2023-03-09"
+
+  - url: "/assets/images/GannetRidges.jpeg"
+    alt: "Gannet and surrounding ridgelines in the Wind River Range, Wyoming."
+    date: "2023-08-13"
+
+  - url: "/assets/images/CooperFisherChimney.jpeg"
+    alt: "Cooper Stewart on Fisher's Chimney, Mt Shuksan with Mt. Baker in the background."
+    date: "2024-07-17"
+
+sends:
+  - url: "/assets/images/FuzzKingsCaveSedona.jpeg"
+    alt: "David Haynes checking out the Anasazi cliff dwellings while rappelling. Near Sedona, Arizona."
+    date: "2024-03-05"
+
+  - url: "/assets/images/CooperHiddenHavenLastPitch2023.jpeg"
+    alt: "Cooper Stewart climbing the aesthetic last pitch of Hidden Haven. Southern Utah."
+    date: "2023-02-19"
+
+  - url: "/assets/images/FuzzSundialFalls.jpeg"
+    alt: "David Haynes jubilant after topping out his first ice climb. Wasatch, Utah"
+    date: "2023-11-26"
+
+  - url: "/assets/images/CooperTwinChutesStansburry.jpeg"
+    alt: "Cooper Stewart booting up the western coulior of Twin Chutes. Stansbury Mountains, Utah."
+    date: "2024-05-24"
+
+  - url: "/assets/images/JordanHeavenHalfpipe.jpeg"
+    alt: "Jordan Evans shredding in whiteout conditions on Heaven's Halfpipe. Wasatch, Utah."
+    date: "2024-02-10"
+
+  - url: "/assets/images/JordanShotgunChutes.jpeg"
+    alt: "Jordan Evans shredding spring snow on Shotgun Chutes. Wasatch, Utah."
+    date: "2024-05-27"
+
+  - url: "/assets/images/JordanCowboyRidge.jpeg"
+    alt: "Jordan Evans climbing a crack on Cowboy Ridge, just outside Zion National Park."
+    date: "2023-05-06"
+
+portraits:
+  - url: "/assets/images/JordanIndianBasin.jpeg"
+    alt: "Jordan Evans happy to have sumitted Fremont and back before lunch. Wind River Range, Wyoming."
+    date: "2024-07-05"
+
+  - url: "/assets/images/JordanMeadowPortrait.jpeg"
+    alt: "Jordan Evans enjoying golden hour. Near Mt. Timpanogos, Wasatch."
+    date: "2022-10-16"
+
+  - url: "/assets/images/FuzzSawtoothPortrait.jpeg"
+    alt: "David Haynes looking up at the climb. Sawtooth Range, Idaho."
+    date: "2022-06-13"
+
+  - url: "/assets/images/JordanAntelopeIsland.jpg"
+    alt: "Jordan Evans on Antelope Island, Utah"
+    date: "2020-01-19"
+
+flora_and_fauna:
+  - url: "/assets/images/TimpanogosGoat.jpeg"
+    alt: "A leaping mountain goat on the Timpanogos Massif. Wasatch, Utah"
+    date: "2022-06-25"
+
+  - url: "/assets/images/PfeifferhornFlowers.jpeg"
+    alt: "Alpine flowers clinging to the side of a cliff on Pfeifferhorn. Wasatch, Utah."
+    date: "2023-07-16"
+
+  - url: "/assets/images/TitcombFlower.jpeg"
+    alt: "A couple of flowers in the Wind River Range, Wyoming."
+    date: "2023-08-12"

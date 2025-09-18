@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+<nav class="top-navbar">
+    <div class="nav-left">
+        <span class="brand"><a href=index.html>Moments in Nature by Shane Haynes</a></span>
+    </div>
+    <div class="nav-right">
+        <a href="#">Outdoor Blog</a>
+    </div>
+</nav>
+
+    <!-- Page Header -->
+    <header class="site-header">
+        <h1>{{ page.title }}</h1>
+    </header>
+
+    <!-- Secondary Navigation Bar -->
+    <nav class="secondary-navbar">
+        <a href="/">All</a>
+        <a href="/landscape.html">Landscape</a>
+        <a href="/sending-and-shredding.html">Adventure</a>
+        <a href="/portraits.html">Portraits</a>
+        <a href="/flora-and-fauna.html">Flora and Fauna</a>
+    </nav>
+
+    <!-- Page Content -->
+    <main>
+        {{ content }}
+    </main>
+
+<!-- Lightbox for Image Viewer -->
+<div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+        <span id="prev-arrow" class="lightbox-arrow">&#10094;</span> <!-- Left Arrow -->
+        <img id="lightbox-image" src="" alt="">
+        <span id="next-arrow" class="lightbox-arrow">&#10095;</span> <!-- Right Arrow -->
+        <p id="lightbox-description"></p>
+    </div>
+</div>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>

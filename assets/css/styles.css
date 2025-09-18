@@ -1,0 +1,202 @@
+/*Notes:
+classier font
+space between category words on navbar
+make hover color the same across links (check out outdoor blog
+
+*/
+/* Global Styles */
+body {
+  font-family: "Nunito", sans-serif;
+  background: #1d1d1d; /* Light gray background */
+  color: #222;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Top Navbar */
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1d1d1d; /* Dark Gray */
+  padding: 15px 20px;
+  color: white;
+  margin-top: .5rem;
+  margin-bottom: -.75rem;
+}
+
+/* Left-aligned branding */
+.nav-left .brand {
+  font-size: 1rem;
+  margin-top: 1%;
+}
+
+.nav-left .brand a{
+  font-size: 1.2em;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-left .brand a:visited {
+  color: white;
+}
+/* Right-aligned links */
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+.nav-right a:hover {
+  color: #58a6ff;
+}
+
+
+/* Page Header */
+.site-header {
+  background: #1d1d1d; /* Same as navbar for a unified look */
+  padding: 30px 0;
+  color: white;
+}
+
+.site-header h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+/* Secondary Navbar */
+.secondary-navbar {
+  background: #444;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.secondary-navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s;
+}
+
+.secondary-navbar a:hover {
+  color: #ffb86c;
+}
+
+/* Masonry Grid for Images */
+.gallery {
+  column-count: 3; /* Creates a Masonry-style grid */
+  column-gap: 15px;
+  max-width: 85%;
+  margin: 40px auto;
+}
+
+.gallery-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Lightbox Overlay */
+.lightbox {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Lightbox Content */
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Enlarged Image */
+.lightbox-content img {
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain; /* Maintains aspect ratio */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Image Description */
+.lightbox-content p {
+  margin-top: 30px;
+  font-size: 1.2em;
+  color: white;
+  text-align: center;
+}
+
+/* Hover Effect for Cursor */
+.gallery-item img {
+  cursor: zoom-in;
+}
+
+/* Close Lightbox on Click */
+.lightbox.show {
+  display: flex;
+}
+
+/* Lightbox Arrows */
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3em;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.lightbox-arrow:hover {
+  opacity: 0.7;
+}
+
+#prev-arrow {
+  left: 5%;
+}
+
+#next-arrow {
+  right: 5%;
+}
+
+
+/* Responsive Masonry Grid */
+@media (max-width: 800px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    column-count: 1;
+  }
+}
+

@@ -1,0 +1,14 @@
+---
+layout: default
+title: Portrait Photography
+category: portraits
+---
+
+<section class="gallery">
+  {% assign sorted_photos = site.data.photos.portraits | sort: "date" | reverse %}
+  {% for photo in sorted_photos %}
+    <div class="gallery-item">
+      <img src="{{ photo.url }}" alt="{{ photo.alt }}">
+    </div>
+  {% endfor %}
+</section>
