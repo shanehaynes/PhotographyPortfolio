@@ -1,42 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
-  let page = 1;
-  let loading = false;
-
-  window.addEventListener("scroll", function () {
-    if (
-      window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 &&
-      !loading
-    ) {
-      loading = true;
-      page++;
-
-      fetch(`/load-more-photos?page=${page}`)
-        .then((response) => response.text())
-        .then((html) => {
-          let tempDiv = document.createElement("div");
-          tempDiv.innerHTML = html;
-
-          let newImages = tempDiv.querySelectorAll(".gallery-item");
-          newImages.forEach((image) =>
-            document.querySelector(".gallery").appendChild(image)
-          );
-
-          // Force Masonry to recalculate layout
-          if (typeof Masonry !== "undefined") {
-            let masonryGrid = document.querySelector(".gallery");
-            new Masonry(masonryGrid, {
-              itemSelector: ".gallery-item",
-              columnWidth: ".gallery-item",
-              percentPosition: true,
-            });
-          }
-
-          loading = false;
-        })
-        .catch((error) => console.error("Error loading images:", error));
-    }
-  });
-});
+// Infinite scroll functionality disabled for GitHub Pages static hosting
+// This functionality would require a backend server to provide pagination
 
 document.addEventListener("DOMContentLoaded", function () {
   const lightbox = document.getElementById("lightbox");
@@ -90,5 +53,3 @@ document.addEventListener("DOMContentLoaded", function () {
     openLightbox(currentIndex + 1);
   });
 });
-
-

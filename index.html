@@ -7,7 +7,7 @@ title: Photography
   {% assign sorted_photos = site.data.photos.recent | sort: "date" | reverse %}
   {% for photo in sorted_photos %}
     <div class="gallery-item">
-      <img src="{{ photo.url }}" alt="{{ photo.alt }}">
+      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}">
     </div>
   {% endfor %}
 </section>
