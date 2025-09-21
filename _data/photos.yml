@@ -186,3 +186,7 @@ flora_and_fauna:
   - url: "assets/images/TitcombFlower.jpeg"
     alt: "A couple of flowers in the Wind River Range, Wyoming."
     date: "2023-08-12"
+
+  - url: "assets/images/BigHornSheep.jpeg"
+    alt: "Big Horn Sheep grazing. Wasatch, Utah"
+    date: "2025-04-12"
