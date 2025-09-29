@@ -5,11 +5,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const lightbox = document.getElementById("lightbox");
   const lightboxImage = document.getElementById("lightbox-image");
   const lightboxDescription = document.getElementById("lightbox-description");
+  const lightboxDate = document.getElementById("lightbox-date");
   const prevArrow = document.getElementById("prev-arrow");
   const nextArrow = document.getElementById("next-arrow");
 
   let images = Array.from(document.querySelectorAll(".gallery-item img"));
   let currentIndex = 0;
+
+  // Lazy Loading Support - Add loaded class when images finish loading
+  images.forEach((img) => {
+    // If image is already loaded (cached)
+    if (img.complete && img.naturalHeight !== 0) {
+      img.classList.add('loaded');
+    }
+    
+    // Add load event listener for images still loading
+    img.addEventListener('load', function() {
+      this.classList.add('loaded');
+    });
+    
+    // Handle load errors gracefully
+    img.addEventListener('error', function() {
+      console.warn('Failed to load image:', this.src);
+      this.classList.add('loaded'); // Still add loaded class to avoid permanent opacity
+    });
+  });
 
   function openLightbox(index) {
     if (index < 0) index = images.length - 1;
@@ -17,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     currentIndex = index;
     lightboxImage.src = images[currentIndex].src;
-    lightboxDescription.innerText = images[currentIndex].alt;
+    lightboxDate.innerText = images[currentIndex].dataset.date;    lightboxDescription.innerText = images[currentIndex].alt;
     lightbox.classList.add("show");
   }
 
@@ -53,3 +73,4 @@ document.addEventListener("DOMContentLoaded", function () {
     openLightbox(currentIndex + 1);
   });
 });
+

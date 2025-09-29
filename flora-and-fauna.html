@@ -2,13 +2,16 @@
 layout: default
 title: Flora and Fauna Photography
 category: flora_and_fauna
+description: "Wildlife and botanical photography by Shane Haynes showcasing the diverse flora and fauna of the American West, from alpine wildflowers to mountain wildlife."
+keywords: "wildlife photography, botanical photography, flora photography, fauna photography, alpine flowers, mountain wildlife, nature macro photography, environmental photography"
+image: "assets/images/TitcombFlower.jpeg"
 ---
 
 <section class="gallery">
   {% assign sorted_photos = site.data.photos.flora_and_fauna | sort: "date" | reverse %}
   {% for photo in sorted_photos %}
     <div class="gallery-item">
-      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}">
+      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}" loading="lazy" decoding="async" data-date="{{ photo.date }}">
     </div>
   {% endfor %}
 </section>

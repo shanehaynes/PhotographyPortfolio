@@ -2,13 +2,16 @@
 layout: default
 title: Adventure Photography
 category: sends
+description: "Adventure photography by Shane Haynes capturing climbing, skiing, and outdoor sports in the American West. Dynamic action shots and expedition photography from the mountains."
+keywords: "adventure photography, climbing photography, skiing photography, outdoor sports photography, mountain adventure, expedition photography, action sports photography"
+image: "assets/images/CooperHiddenHavenLastPitch2023.jpeg"
 ---
 
 <section class="gallery">
   {% assign sorted_photos = site.data.photos.sends | sort: "date" | reverse %}
   {% for photo in sorted_photos %}
     <div class="gallery-item">
-      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}">
+      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}" loading="lazy" decoding="async" data-date="{{ photo.date }}">
     </div>
   {% endfor %}
 </section>

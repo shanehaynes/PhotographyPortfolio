@@ -5,7 +5,7 @@ layout: default
 <section class="gallery">
   {% for photo in site.data.photos[page.category] %}
     <div class="gallery-item">
-      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}">
+      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}" loading="lazy" data-date="{{ photo.date }}">
     </div>
   {% endfor %}
 </section>

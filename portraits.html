@@ -2,13 +2,16 @@
 layout: default
 title: Portrait Photography
 category: portraits
+description: "Environmental portrait photography by Shane Haynes featuring outdoor enthusiasts, climbers, and adventurers in their natural environment."
+keywords: "portrait photography, environmental portraits, outdoor portraits, climbing portraits, adventure portraits, mountain portraits, outdoor people photography"
+image: "assets/images/JordanAntelopeIsland.jpg"
 ---
 
 <section class="gallery">
   {% assign sorted_photos = site.data.photos.portraits | sort: "date" | reverse %}
   {% for photo in sorted_photos %}
     <div class="gallery-item">
-      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}">
+      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}" loading="lazy" loading="lazy" decoding="async">
     </div>
   {% endfor %}
 </section>

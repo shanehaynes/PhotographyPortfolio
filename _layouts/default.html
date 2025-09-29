@@ -3,7 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords" content="outdoor photography, nature photography, landscape photography, adventure photography, wildlife photography, Shane Haynes, Utah photography, mountain photography, climbing photography, Wasatch photography">
+    <meta name="author" content="Shane Haynes">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:image" content="{% if page.image %}{{ site.url }}{{ site.baseurl }}/{{ page.image }}{% else %}{{ site.url }}{{ site.baseurl }}/assets/images/{% if page.title == 'Landscape' %}AspenReflection.jpeg{% elsif page.title == 'Adventure' %}CooperShuksan.jpeg{% elsif page.title == 'Portraits' %}FuzzSawtoothPortrait.jpeg{% elsif page.title == 'Flora and Fauna' %}TitcombFlower.jpeg{% else %}AspenReflection.jpeg{% endif %}{% endif %}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <meta property="twitter:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="twitter:image" content="{% if page.image %}{{ site.url }}{{ site.baseurl }}/{{ page.image }}{% else %}{{ site.url }}{{ site.baseurl }}/assets/images/{% if page.title == 'Landscape' %}AspenReflection.jpeg{% elsif page.title == 'Adventure' %}CooperShuksan.jpeg{% elsif page.title == 'Portraits' %}FuzzSawtoothPortrait.jpeg{% elsif page.title == 'Flora and Fauna' %}TitcombFlower.jpeg{% else %}AspenReflection.jpeg{% endif %}{% endif %}">
+    {% if site.twitter_username %}<meta property="twitter:creator" content="@{{ site.twitter_username }}">{% endif %}
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#1d1d1d">
+    <meta name="msapplication-TileColor" content="#1d1d1d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico">
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
 </head>
 <body>
@@ -44,6 +84,7 @@
         <img id="lightbox-image" src="" alt="">
         <span id="next-arrow" class="lightbox-arrow">&#10095;</span> <!-- Right Arrow -->
         <p id="lightbox-description"></p>
+        <p id="lightbox-date"></p>
     </div>
 </div>
 

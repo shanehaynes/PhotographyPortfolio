@@ -1,13 +1,16 @@
 ---
 layout: default
-title: Photography
+title: All Outdoor Photography
+description: "Explore Shane Haynes' outdoor photography portfolio featuring stunning landscape, adventure, and wildlife photography. Discover moments in nature captured through the lens of an experienced outdoor photographer. Based out of the Wasatch Mountain Range, near Salt Lake City, Utah."
+keywords: "outdoor photography portfolio, nature photography, landscape photography, adventure photography, Shane Haynes photography, Utah photography, mountain photography, wilderness photography, Shane Haynes, Jordan Evans, Cooper Stewart, David Haynes"
+image: "assets/images/CooperTwinChutesStansburry.jpeg"
 ---
 
 <section class="gallery">
   {% assign sorted_photos = site.data.photos.recent | sort: "date" | reverse %}
   {% for photo in sorted_photos %}
     <div class="gallery-item">
-      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}">
+      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}" loading="lazy" decoding="async" data-date="{{ photo.date }}">
     </div>
   {% endfor %}
 </section>

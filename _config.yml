@@ -10,18 +10,16 @@
 
 # Site settings
 title: "Shane's Outdoor Photography"
-description: "A portfolio of outdoor photography by Shane."
+description: "A portfolio of outdoor photography by Shane Haynes featuring climbing, skiing, canyoneering, and other outdoor adventures."
 baseurl: "/PhotographyPortfolio" # GitHub Pages baseurl for repository name
 url: "https://shanehaynes.github.io" # GitHub Pages URL
 twitter_username: shanehaynes
 github_username: shanehaynes
 
-# Build settings
 theme: minima
 plugins:
   - jekyll-feed
 
-# Exclude from processing
 exclude:
   - .sass-cache/
   - .jekyll-cache/
@@ -33,3 +31,7 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+sass:
+  style: compressed
+
