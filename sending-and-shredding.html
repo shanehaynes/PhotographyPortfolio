@@ -11,7 +11,7 @@ image: "assets/images/CooperHiddenHavenLastPitch2023.jpeg"
   {% assign sorted_photos = site.data.photos.sends | sort: "date" | reverse %}
   {% for photo in sorted_photos %}
     <div class="gallery-item">
-      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}" loading="lazy" decoding="async" data-date="{{ photo.date }}">
+      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}" loading="lazy" decoding="async" data-date="{{ photo.date }}" data-title="{{ photo.title }}">
     </div>
   {% endfor %}
 </section>

@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     currentIndex = index;
     lightboxImage.src = images[currentIndex].src;
-    lightboxDate.innerText = images[currentIndex].dataset.date;    lightboxDescription.innerText = images[currentIndex].alt;
+    lightboxDate.innerText = images[currentIndex].dataset.date;    lightboxDescription.innerText = images[currentIndex].dataset.title;
     lightbox.classList.add("show");
   }
 
