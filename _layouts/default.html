@@ -46,41 +46,48 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
     
-    <!-- WebSite Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "{{ site.title }}",
-      "description": "{{ site.description }}",
-      "url": "{{ site.url }}{{ site.baseurl }}/",
-      "author": {
-        "@type": "Person",
-        "name": "Shane Haynes",
-        "url": "{{ site.url }}{{ site.baseurl }}/about.html"
-      },
-      "publisher": {
-        "@type": "Person", 
-        "name": "Shane Haynes",
-        "url": "{{ site.url }}{{ site.baseurl }}/about.html"
-      },
-      "inLanguage": "en-US",
-      "copyrightYear": "2024",
-      "dateCreated": "2024",
-      "dateModified": "{{ site.time | date: '%Y-%m-%d' }}",
-      "keywords": "outdoor photography, nature photography, landscape photography, adventure photography, wildlife photography, Shane Haynes, Utah photography, mountain photography, climbing photography, Wasatch photography"
-    }
-    </script>
+{% assign root = site.url | append: site.baseurl %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "{{ root }}/#website",
+  "url": "{{ root }}/",
+  "name": "{{ site.title | escape }}",
+  "alternateName": "Shane Haynes Photography",
+  "description": "{{ site.description | strip_newlines | escape }}",
+  "inLanguage": "en-US",
+  "isAccessibleForFree": true,
+
+  "publisher": { "@id": "{{ root }}/#person" },
+
+  "copyrightHolder": { "@id": "{{ root }}/#person" },
+  "copyrightYear": "2024",
+
+  "datePublished": "2025-09-18",
+  "dateModified": "{{ site.time | date: '%Y-%m-%d' }}",
+
+  "sameAs": [
+    "https://www.instagram.com/shane.haynes/",
+    "https://twitter.com/Sha_Haynes_",
+    "https://shanehaynes.substack.com/",
+    "https://www.linkedin.com/in/shane-haynes",
+    "https://github.com/shanehaynes"
+  ]
+}
+</script>
+
 </head>
 <body>
 
     <!-- Top Navigation Bar -->
 <nav class="top-navbar">
-    <div class="nav-left">
-        <span class="brand"><a href="{{ site.baseurl }}/">Moments in Nature by Shane Haynes</a></span>
-    </div>
     <div class="nav-right">
         <a href="https://shanehaynes.github.io/OutdoorBlog/">Outdoor Blog</a>
+    </div>
+    <div class="nav-left">
+        <span class="brand"><a href="{{ site.baseurl }}/About">By Shane Haynes</a></span>
     </div>
 </nav>
 

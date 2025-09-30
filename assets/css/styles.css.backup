@@ -1,0 +1,393 @@
+/*Notes:
+classier font
+space between category words on navbar
+make hover color the same across links (check out outdoor blog
+
+*/
+/* Global Styles */
+body {
+  font-family: "Nunito", sans-serif;
+  background: #1d1d1d; /* Light gray background */
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Top Navbar */
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1d1d1d; /* Dark Gray */
+  padding: 15px 20px;
+  color: white;
+  margin-top: .5rem;
+  margin-bottom: -.75rem;
+}
+
+/* Left-aligned branding */
+.nav-left .brand {
+  font-size: 1rem;
+  margin-top: 1%;
+}
+
+.nav-left .brand a{
+  font-size: 1.2em;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-left .brand a:visited {
+  color: white;
+}
+/* Right-aligned links */
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+.nav-right a:hover {
+  color: #58a6ff;
+}
+
+
+/* Page Header */
+.site-header {
+  background: #1d1d1d; /* Same as navbar for a unified look */
+  padding: 30px 0;
+  color: white;
+}
+
+.site-header h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+/* Secondary Navbar */
+.secondary-navbar {
+  background: #444;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.secondary-navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s;
+}
+
+.secondary-navbar a:hover {
+  color: #ffb86c;
+}
+
+/* Masonry Grid for Images */
+.gallery {
+  column-count: 3; /* Creates a Masonry-style grid */
+  column-gap: 15px;
+  max-width: 85%;
+  margin: 40px auto;
+}
+
+.gallery-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform 0.3s ease, opacity 0.4s ease, filter 0.4s ease;
+  background: #2c2c2c;
+}
+
+/* Lazy Loading Transitions */
+.gallery-item img[loading="lazy"] {
+  opacity: 1;
+}
+
+.gallery-item img[loading="lazy"]:not([src]) {
+  opacity: 0.3;
+  background: linear-gradient(135deg, #2c2c2c 0%, #1d1d1d 100%);
+}
+
+/* Lightbox Overlay */
+.lightbox {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Lightbox Content */
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Enlarged Image */
+.lightbox-content img {
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain; /* Maintains aspect ratio */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Image Description */
+
+/* Image Date */
+.lightbox-content #lightbox-date {
+  margin-top: -5px;
+  font-size: 1em;
+  color: #ccc;
+  text-align: center;
+  font-style: italic;
+}
+
+.lightbox-content p {
+  margin-top: 30px;
+  font-size: 1.2em;
+  color: white;
+  text-align: center;
+}
+
+/* Close Lightbox on Click */
+.lightbox.show {
+  display: flex;
+}
+
+/* Lightbox Arrows */
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3em;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.lightbox-arrow:hover {
+  opacity: 0.7;
+}
+
+#prev-arrow {
+  left: 5%;
+}
+
+#next-arrow {
+  right: 5%;
+}
+
+
+/* Responsive Masonry Grid */
+@media (max-width: 800px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    column-count: 1;
+  }
+}
+
+
+
+/* About Page Specific Styles */
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-hero h2 {
+  font-family: "Inter", "Segoe UI", "Roboto", sans-serif;
+  font-size: 2.5em;
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.about-subtitle {
+  font-family: "Inter", "Segoe UI", "Roboto", sans-serif;
+  font-size: 1.3em;
+  color: #e0e0e0;
+  font-style: italic;
+  margin: 0;
+  font-weight: 300;
+}
+
+.about-section {
+  margin-bottom: 35px;
+}
+
+.about-section h3 {
+  text-align: center;
+  font-family: "Inter", "Segoe UI", "Roboto", sans-serif;
+  font-size: 1.5em;
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.about-section p {
+  font-family: "Inter", "Segoe UI", "Roboto", sans-serif;
+  font-size: 1.1em;
+  color: #f0f0f0;
+  margin-bottom: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.about-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive About Page */
+@media (max-width: 768px) {
+  .about-content {
+    padding: 30px 15px;
+  }
+  
+  .about-hero h2 {
+    font-size: 2em;
+  }
+  
+  .about-subtitle {
+    font-size: 1.1em;
+  }
+  
+  .about-section h3 {
+  text-align: center;
+    font-size: 1.3em;
+  }
+  
+  .about-section p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h2 {
+    font-size: 1.8em;
+  }
+  
+  .about-subtitle {
+    font-size: 1em;
+  }
+}
+
+/* About Page Footer */
+.about-footer {
+  max-width: 800px;
+  margin: 60px auto 40px;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid #444;
+}
+
+.about-footer h3 {
+  font-family: "Inter", "Segoe UI", "Roboto", sans-serif;
+  font-size: 1.8em;
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  color: #e0e0e0;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons a:hover {
+  color: #58a6ff;
+  transform: translateY(-3px);
+}
+
+.social-icons svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Responsive About Footer */
+@media (max-width: 768px) {
+  .about-footer {
+    margin: 40px auto 30px;
+    padding: 30px 15px;
+  }
+  
+  .about-footer h3 {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+  }
+  
+  .social-icons {
+    gap: 25px;
+  }
+  
+  .social-icons svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-footer h3 {
+    font-size: 1.3em;
+  }
+  
+  .social-icons {
+    gap: 20px;
+  }
+  
+  .social-icons svg {
+    width: 26px;
+    height: 26px;
+  }
+}
