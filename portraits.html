@@ -7,11 +7,77 @@ keywords: "portrait photography, environmental portraits, outdoor portraits, cli
 image: "assets/images/JordanAntelopeIsland.jpg"
 ---
 
+{% assign root = site.url | append: site.baseurl %}
+{% assign sorted_photos = site.data.photos.portraits | sort: "date" | reverse %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "{{ root }}/portraits.html#webpage",
+      "url": "{{ root }}/portraits.html",
+      "name": "Portraits — {{ site.title }}",
+      "isPartOf": { "@id": "{{ root }}/#website" },
+      "inLanguage": "en-US",
+      "mainEntity": { "@id": "{{ root }}/portraits.html#collection" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "{{ root }}/{{ sorted_photos.first.url }}"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "{{ root }}/portraits.html#collection",
+      "url": "{{ root }}/portraits.html",
+      "name": "Portrait Photography Collection",
+      "description": "Environmental portrait photography by Shane Haynes featuring outdoor enthusiasts, climbers, and adventurers in their natural environment.",
+      "isPartOf": { "@id": "{{ root }}/#website" },
+      "publisher": { "@id": "{{ root }}/#person" },
+      "author": { "@id": "{{ root }}/#person" },
+      "inLanguage": "en-US",
+      "genre": "Portrait Photography",
+      "dateModified": "{{ site.time | date: '%Y-%m-%d' }}",
+      "contentLocation": { "@type": "Place", "name": "American West" },
+      "hasPart": [
+        {% for photo in sorted_photos limit: 12 %}
+        {
+          "@type": "ImageObject",
+          "@id": "{{ root }}/{{ photo.url }}#image",
+          "url": "{{ root }}/{{ photo.url }}",
+          "contentUrl": "{{ root }}/{{ photo.url }}",
+          {% if photo.thumbnail %}"thumbnailUrl": "{{ root }}/{{ photo.thumbnail }}",{% endif %}
+          "name": {{ (photo.title | default: photo.alt) | jsonify }},
+          "description": {{ photo.alt | jsonify }},
+          "datePublished": "{{ photo.date }}",
+          "author": { "@id": "{{ root }}/#person" },
+          "creator": { "@id": "{{ root }}/#person" },
+          "copyrightHolder": { "@id": "{{ root }}/#person" },
+          "copyrightYear": "{{ photo.date | date: '%Y' }}"
+          {% if photo.width and photo.height %}, "width": {{ photo.width }}, "height": {{ photo.height }}{% endif %}
+          {% if photo.location %}, "contentLocation": { "@type": "Place", "name": {{ photo.location | jsonify }} }{% endif %}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ root }}/portraits.html#breadcrumbs",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ root }}/" },
+        { "@type": "ListItem", "position": 2, "name": "Portraits", "item": "{{ root }}/portraits.html" }
+      ]
+    }
+  ]
+}
+</script>
+
 <section class="gallery">
   {% assign sorted_photos = site.data.photos.portraits | sort: "date" | reverse %}
   {% for photo in sorted_photos %}
     <div class="gallery-item">
-      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}" loading="lazy" loading="lazy" decoding="async">
+      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}" loading="lazy" decoding="async" data-date="{{ photo.date }}" data-title="{{ photo.title }}">
     </div>
   {% endfor %}
 </section>

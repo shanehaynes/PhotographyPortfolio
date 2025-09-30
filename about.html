@@ -6,6 +6,75 @@ keywords: "Shane Haynes photographer, outdoor photographer, adventure photograph
 image: "assets/images/CooperShuksan.jpeg"
 ---
 
+---
+layout: default
+title: About
+description: "Learn about Shane Haynes, an outdoor photographer and adventurer based in the Wasatch Mountain Range, near Salt Lake City, Utah. Discover his story, approach to photography, and commitment to conservation."
+image: "assets/images/CooperShuksan.jpeg"
+---
+
+{% assign root = site.url | append: site.baseurl %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "{{ root }}/#person",
+  "url": "{{ root }}/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ root }}/about/" },
+  "name": "Shane Haynes",
+  "givenName": "Shane",
+  "familyName": "Haynes",
+  "jobTitle": "Outdoor Photographer and Integrations Developer",
+  "hasOccupation": [
+    {
+      "@type": "Occupation",
+      "name": "Outdoor Photographer",
+      "description": "Landscape, climbing, skiing, wildlife, and environmental portraiture in the American West."
+    },
+    {
+      "@type": "Occupation",
+      "name": "Integrations Developer",
+      "description": "Systems integration and automation; APIs, Workato, Azure, SQL."
+    }
+  ],
+  "description": "Outdoor photographer and adventurer based in the Wasatch near Salt Lake City, Utah. Specializes in authentic outdoor moments: landscapes, adventure sports, and environmental portraiture.",
+  "image": "{{ root }}/assets/images/headshot.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Salt Lake City",
+    "addressRegion": "UT",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://www.instagram.com/shane.haynes/",
+    "https://twitter.com/Sha_Haynes_",
+    "https://shanehaynes.substack.com/",
+    "https://www.linkedin.com/in/shane-haynes",
+    "https://github.com/shanehaynes"
+  ],
+  "knowsAbout": [
+    "Outdoor Photography",
+    "Landscape Photography",
+    "Adventure Photography",
+    "Climbing Photography",
+    "Skiing Photography",
+    "Wildlife Photography",
+    "Nature Photography",
+    "Environmental Portraiture",
+    "Environmental Conservation"
+  ],
+  "knowsLanguage": ["English", "Spanish"],
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Utah",
+      "url": "https://www.utah.edu/"
+    }
+  ]
+}
+</script>
+
 <div class="about-content">
     <div class="about-hero">
         <h2>About Shane Haynes</h2>
