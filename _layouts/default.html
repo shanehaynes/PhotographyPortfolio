@@ -43,8 +43,88 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico">
     
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+    <!-- DNS Prefetch for Google Fonts and assets -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"></noscript>
+    
+    <!-- Critical CSS for LCP optimization -->
+    <style>
+      /* Critical above-the-fold styles */
+      body {
+        font-family: "Nunito", sans-serif;
+        background: #1d1d1d;
+        color: #ffffff;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .top-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #1d1d1d;
+        padding: 15px 20px;
+        color: white;
+        margin-top: .5rem;
+        margin-bottom: -.75rem;
+        flex-wrap: nowrap;
+      }
+      .nav-left .brand a {
+        font-size: 1.2em;
+        color: white;
+        text-decoration: none;
+      }
+      .nav-right {
+        display: flex;
+        gap: 20px;
+      }
+      .nav-right a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+        transition: color 0.3s;
+        padding: 5px;
+      }
+      .site-header {
+        background: #1d1d1d;
+        padding: 30px 0;
+        color: white;
+      }
+      .site-header h1 {
+        font-size: 2.5em;
+        margin: 0;
+        padding: 0 15px;
+      }
+      .secondary-navbar {
+        background: #444;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .secondary-navbar a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1em;
+        transition: color 0.3s;
+        padding: 8px 5px;
+        white-space: nowrap;
+      }
+    </style>
+    
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="{{ site.baseurl }}/assets/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css"></noscript>
     
 {% assign root = site.url | append: site.baseurl %}
 
