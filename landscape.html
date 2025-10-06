@@ -4,7 +4,7 @@ title: Landscape Photography
 category: landscape
 description: "Stunning landscape photography by Shane Haynes featuring mountain vistas, alpine lakes, and dramatic wilderness scenes. Professionally done amateur outdoor landscape photography."
 keywords: "landscape photography, mountain photography, alpine photography, wilderness landscapes, Utah landscapes, Wasatch photography, outdoor landscapes, nature photography"
-image: "assets/images/AspenReflection.jpeg"
+image: "assets/images/AspenReflection.webp"
 ---
 
 {% assign root = site.url | append: site.baseurl %}
@@ -81,7 +81,7 @@ image: "assets/images/AspenReflection.jpeg"
   {% assign sorted_photos = site.data.photos.landscape | sort: "date" | reverse %}
   {% for photo in sorted_photos %}
     <div class="gallery-item">
-      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}" loading="lazy" decoding="async" data-date="{{ photo.date }}" data-title="{{ photo.title }}">
+      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}" {% if forloop.index <= 3 %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async" data-date="{{ photo.date }}" data-title="{{ photo.title }}" {% if photo.width and photo.height %}width="{{ photo.width }}" height="{{ photo.height }}"{% endif %}>
     </div>
   {% endfor %}
 </section>

@@ -4,7 +4,7 @@ title: Portrait Photography
 category: portraits
 description: "Environmental portrait photography by Shane Haynes featuring outdoor enthusiasts, climbers, and adventurers in their natural environment."
 keywords: "portrait photography, environmental portraits, outdoor portraits, climbing portraits, adventure portraits, mountain portraits, outdoor people photography"
-image: "assets/images/JordanAntelopeIsland.jpg"
+image: "assets/images/JordanAntelopeIsland.webp"
 ---
 
 {% assign root = site.url | append: site.baseurl %}
@@ -77,7 +77,7 @@ image: "assets/images/JordanAntelopeIsland.jpg"
   {% assign sorted_photos = site.data.photos.portraits | sort: "date" | reverse %}
   {% for photo in sorted_photos %}
     <div class="gallery-item">
-      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}" loading="lazy" decoding="async" data-date="{{ photo.date }}" data-title="{{ photo.title }}">
+      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}" {% if forloop.index <= 3 %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async" data-date="{{ photo.date }}" data-title="{{ photo.title }}" {% if photo.width and photo.height %}width="{{ photo.width }}" height="{{ photo.height }}"{% endif %}>
     </div>
   {% endfor %}
 </section>

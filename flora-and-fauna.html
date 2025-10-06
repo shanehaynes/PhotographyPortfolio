@@ -4,7 +4,7 @@ title: Flora and Fauna Photography
 category: flora_and_fauna
 description: "Intimate wildlife and botanical photography by Shane Haynes capturing the delicate beauty of alpine flora and the majesty of mountain wildlife in their natural habitat."
 keywords: "wildlife photography, botanical photography, flora photography, fauna photography, alpine flowers, mountain wildlife, nature close-ups, environmental photography"
-image: "assets/images/TitcombFlower.jpeg"
+image: "assets/images/TitcombFlower.webp"
 ---
 
 {% assign root = site.url | append: site.baseurl %}
@@ -77,7 +77,7 @@ image: "assets/images/TitcombFlower.jpeg"
   {% assign sorted_photos = site.data.photos.flora_and_fauna | sort: "date" | reverse %}
   {% for photo in sorted_photos %}
     <div class="gallery-item">
-      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}" loading="lazy" decoding="async" data-date="{{ photo.date }}" data-title="{{ photo.title }}">
+      <img src="{{ site.baseurl }}/{{ photo.url }}" alt="{{ photo.alt }}" {% if forloop.index <= 3 %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async" data-date="{{ photo.date }}" data-title="{{ photo.title }}" {% if photo.width and photo.height %}width="{{ photo.width }}" height="{{ photo.height }}"{% endif %}>
     </div>
   {% endfor %}
 </section>
