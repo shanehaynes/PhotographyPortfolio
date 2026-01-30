@@ -125,7 +125,18 @@
     <!-- Preload critical CSS -->
     <link rel="preload" href="{{ site.baseurl }}/assets/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css"></noscript>
-    
+
+    {% if page.lcp_image %}
+      {% assign lcp_image = page.lcp_image %}
+    {% elsif page.category %}
+      {% assign lcp_image = site.data.photos[page.category] | sort: "date" | reverse | first %}
+    {% else %}
+      {% assign lcp_image = site.data.photos.recent | sort: "date" | reverse | first %}
+    {% endif %}
+    {% if lcp_image %}
+      <link rel="preload" as="image" href="{{ site.baseurl }}/{{ lcp_image.url | default: lcp_image }}">
+    {% endif %}
+
 {% assign root = site.url | append: site.baseurl %}
 
 <script type="application/ld+json">
