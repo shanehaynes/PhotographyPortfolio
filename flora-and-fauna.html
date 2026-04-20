@@ -75,7 +75,6 @@ image: "assets/images/TitcombFlower.webp"
 </script>
 
 <section class="gallery">
-  <p class="gallery-intro">Wildlife and alpine flora photographs from high country in the American West.</p>
   {% assign sorted_photos = site.data.photos.flora_and_fauna | sort: "date" | reverse %}
   {% for photo in sorted_photos %}
     <div class="gallery-item">
