@@ -10,13 +10,15 @@
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta name="keywords" content="outdoor photography, nature photography, landscape photography, adventure photography, wildlife photography, Shane Haynes, Utah photography, mountain photography, climbing photography, Wasatch photography">
     <meta name="author" content="Shane Haynes">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="{% if page.noindex %}noindex, follow{% else %}index, follow{% endif %}">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    {% assign canonical_url = page.url | replace: 'index.html', '' %}
+    {% assign canonical_url = canonical_url | replace: '//', '/' %}
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ canonical_url }}">
     <meta property="og:title" content="{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:image" content="{% if page.image %}{{ site.url }}{{ site.baseurl }}/{{ page.image }}{% else %}{{ site.url }}{{ site.baseurl }}/assets/images/{% if page.title == 'Landscape' %}AspenReflection.webp{% elsif page.title == 'Adventure' %}CooperShuksan.webp{% elsif page.title == 'Portraits' %}FuzzSawtoothPortrait.webp{% elsif page.title == 'Flora and Fauna' %}TitcombFlower.webp{% else %}AspenReflection.webp{% endif %}{% endif %}">
@@ -25,7 +27,7 @@
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <meta property="twitter:url" content="{{ site.url }}{{ site.baseurl }}{{ canonical_url }}">
     <meta property="twitter:title" content="{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta property="twitter:image" content="{% if page.image %}{{ site.url }}{{ site.baseurl }}/{{ page.image }}{% else %}{{ site.url }}{{ site.baseurl }}/assets/images/{% if page.title == 'Landscape' %}AspenReflection.webp{% elsif page.title == 'Adventure' %}CooperShuksan.webp{% elsif page.title == 'Portraits' %}FuzzSawtoothPortrait.webp{% elsif page.title == 'Flora and Fauna' %}TitcombFlower.webp{% else %}AspenReflection.webp{% endif %}{% endif %}">
@@ -38,10 +40,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ canonical_url }}">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico">
+    <link rel="icon" type="image/webp" href="{{ site.baseurl }}/assets/images/AspenReflection.webp">
     
     <!-- DNS Prefetch for Google Fonts and assets -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">

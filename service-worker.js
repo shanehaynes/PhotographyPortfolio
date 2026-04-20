@@ -4,12 +4,12 @@ const RUNTIME_CACHE = `runtime-${CACHE_VERSION}`;
 
 const PRECACHE_URLS = [
   '/',
-  '/index.html',
   '/about.html',
   '/landscape.html',
   '/sending-and-shredding.html',
   '/portraits.html',
   '/flora-and-fauna.html',
+  '/404.html',
   '/assets/css/styles.css',
   '/assets/js/script.js'
 ];

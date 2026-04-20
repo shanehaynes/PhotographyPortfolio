@@ -75,6 +75,7 @@ image: "assets/images/JordanAntelopeIsland.webp"
 </script>
 
 <section class="gallery">
+  <p class="gallery-intro">Environmental outdoor portraits made in natural light across mountain terrain.</p>
   {% assign sorted_photos = site.data.photos.portraits | sort: "date" | reverse %}
   {% for photo in sorted_photos %}
     <div class="gallery-item">

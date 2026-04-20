@@ -75,6 +75,7 @@ image: "assets/images/CooperShuksan.webp"
 </script>
 
 <section class="gallery">
+  <p class="gallery-intro">Climbing and skiing action images from human-powered days in the mountains.</p>
   {% assign sorted_photos = site.data.photos.sends | sort: "date" | reverse %}
   {% for photo in sorted_photos %}
     <div class="gallery-item">
