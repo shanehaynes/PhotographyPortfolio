@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+    <title>{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="title" content="{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta name="keywords" content="outdoor photography, nature photography, landscape photography, adventure photography, wildlife photography, Shane Haynes, Utah photography, mountain photography, climbing photography, Wasatch photography">
     <meta name="author" content="Shane Haynes">
@@ -17,7 +17,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-    <meta property="og:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:title" content="{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:image" content="{% if page.image %}{{ site.url }}{{ site.baseurl }}/{{ page.image }}{% else %}{{ site.url }}{{ site.baseurl }}/assets/images/{% if page.title == 'Landscape' %}AspenReflection.webp{% elsif page.title == 'Adventure' %}CooperShuksan.webp{% elsif page.title == 'Portraits' %}FuzzSawtoothPortrait.webp{% elsif page.title == 'Flora and Fauna' %}TitcombFlower.webp{% else %}AspenReflection.webp{% endif %}{% endif %}">
     <meta property="og:site_name" content="{{ site.title }}">
@@ -26,7 +26,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-    <meta property="twitter:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="twitter:title" content="{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta property="twitter:image" content="{% if page.image %}{{ site.url }}{{ site.baseurl }}/{{ page.image }}{% else %}{{ site.url }}{{ site.baseurl }}/assets/images/{% if page.title == 'Landscape' %}AspenReflection.webp{% elsif page.title == 'Adventure' %}CooperShuksan.webp{% elsif page.title == 'Portraits' %}FuzzSawtoothPortrait.webp{% elsif page.title == 'Flora and Fauna' %}TitcombFlower.webp{% else %}AspenReflection.webp{% endif %}{% endif %}">
     {% if site.twitter_username %}<meta property="twitter:creator" content="@{{ site.twitter_username }}">{% endif %}
@@ -175,10 +175,10 @@
     <!-- Top Navigation Bar -->
 <nav class="top-navbar">
     <div class="nav-right">
-        <a href="https://shanehaynes.github.io/OutdoorBlog/">Outdoor Blog</a>
+        <a href="https://shanehaynes.github.io/OutdoorBlog/" aria-label="Visit Shane Haynes Outdoor Blog">Outdoor Blog</a>
     </div>
     <div class="nav-left">
-        <span class="brand"><a href="{{ site.baseurl }}/about.html">By Shane Haynes</a></span>
+        <span class="brand"><a href="{{ site.baseurl }}/about.html" aria-label="Learn about Shane Haynes Photography">By Shane Haynes</a></span>
     </div>
 </nav>
 
@@ -189,11 +189,11 @@
 
     <!-- Secondary Navigation Bar -->
     <nav class="secondary-navbar">
-        <a href="{{ site.baseurl }}/">All</a>
-        <a href="{{ site.baseurl }}/landscape.html">Landscape</a>
-        <a href="{{ site.baseurl }}/sending-and-shredding.html">Adventure</a>
-        <a href="{{ site.baseurl }}/portraits.html">Portraits</a>
-        <a href="{{ site.baseurl }}/flora-and-fauna.html">Flora and Fauna</a>
+        <a href="{{ site.baseurl }}/" aria-label="View all photography galleries">All</a>
+        <a href="{{ site.baseurl }}/landscape.html" aria-label="View Utah landscape photography">Landscape</a>
+        <a href="{{ site.baseurl }}/sending-and-shredding.html" aria-label="See ski and mountain action photography">Adventure</a>
+        <a href="{{ site.baseurl }}/portraits.html" aria-label="Browse outdoor portrait photography">Portraits</a>
+        <a href="{{ site.baseurl }}/flora-and-fauna.html" aria-label="Explore wildlife and flora photography">Flora and Fauna</a>
     </nav>
 
     <!-- Page Content -->
