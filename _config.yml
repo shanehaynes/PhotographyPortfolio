@@ -19,7 +19,6 @@ github_username: shanehaynes
 theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
 
 exclude:
   - .sass-cache/
@@ -35,4 +34,3 @@ exclude:
 
 sass:
   style: compressed
-
