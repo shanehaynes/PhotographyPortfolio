@@ -119,13 +119,6 @@ body {
   margin: 40px auto;
 }
 
-.gallery-intro {
-  column-span: all;
-  margin: 0 0 20px;
-  color: #d0d0d0;
-  font-size: 0.95rem;
-}
-
 .not-found {
   max-width: 640px;
   margin: 60px auto;
